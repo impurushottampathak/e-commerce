@@ -1,0 +1,32 @@
+<div class="admin-auth">
+  <div class="signup">
+    <h1>Admin SignUp Form</h1>
+    <form class="common-form" #adminSignUp="ngForm" (ngSubmit)="signUp(adminSignUp.value)">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-input"
+        placeholder="Enter Your Name"
+        name="name"
+        ngModel
+      />
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-input"
+        placeholder="Enter Your Email"
+        name="email"
+        ngModel
+      />
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Enter Password"
+        name="password"
+        ngModel
+      />
+      <button class="form-button">Sign Up</button>
+    </form>
+  </div>
+</div>

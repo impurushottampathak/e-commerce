@@ -1,0 +1,34 @@
+{
+  "admin": [
+    {
+      "name": "Sachin",
+      "email": "sachin@admin.com",
+      "password": "admin@123",
+      "id": 1
+    },
+    {
+      "name": "Pooja",
+      "email": "pooja@admin.com",
+      "password": "admin@123",
+      "id": 2
+    },
+    {
+      "name": "Surekha",
+      "email": "surekha@admin.com",
+      "password": "admin@123",
+      "id": 3
+    },
+    {
+      "name": "Shubham",
+      "email": "shubham@admin",
+      "password": "admin@123",
+      "id": 4
+    },
+    {
+      "name": "Palash",
+      "email": "palash@admin.com",
+      "password": "admin@123",
+      "id": 5
+    }
+  ]
+}
