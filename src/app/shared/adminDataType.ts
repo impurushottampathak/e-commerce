@@ -3,3 +3,8 @@ export interface adminSignUp{
     email:string,
     password: string
 }
+
+export interface adminSLogin{
+    email:string,
+    password: string
+}

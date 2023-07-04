@@ -29,6 +29,12 @@
       "email": "palash@admin.com",
       "password": "admin@123",
       "id": 5
+    },
+    {
+      "name": "Sandeep",
+      "email": "sandeep@admin.com",
+      "password": "admin@123",
+      "id": 6
     }
   ]
 }

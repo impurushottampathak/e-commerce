@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'admin-signup',
+    path: 'admin-auth',
     component: AdminAuthComponent
   },
   {

@@ -1,5 +1,5 @@
 <div class="admin-auth">
-  <div class="signup">
+  <div *ngIf="!showLogin" class="signup">
     <h1>Admin SignUp Form</h1>
     <form class="common-form" #adminSignUp="ngForm" (ngSubmit)="signUp(adminSignUp.value)">
       <label for="name" class="form-label">Name</label>
@@ -27,6 +27,32 @@
         ngModel
       />
       <button class="form-button">Sign Up</button>
+      <a class="authToggle" (click)="openLogin()">Already have an account? Click here for Login <span><i class="fa-solid fa-toggle-on"></i></span></a>
+    </form>
+  </div>
+
+  <div *ngIf="showLogin" class="login">
+    <h1>Admin Login Form</h1>
+    <p class="errorMsg">{{loginError}}</p>
+    <form class="common-form" #adminLogin="ngForm" (ngSubmit)="login(adminLogin.value)">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-input"
+        placeholder="Enter Your Email"
+        name="email"
+        ngModel
+      />
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-input"
+        placeholder="Enter Password"
+        name="password"
+        ngModel
+      />
+      <button class="form-button">Login</button>
+      <a class="authToggle" (click)="openSignUp()">Do not have account? Click here for SignUp <span><i class="fa-solid fa-toggle-on"></i></span></a>
     </form>
   </div>
 </div>

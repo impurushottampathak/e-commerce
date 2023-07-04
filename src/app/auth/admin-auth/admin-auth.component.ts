@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { AuthserviceService } from '../authservice.service';
-import { adminSignUp } from 'src/app/shared/adminDataType';
+import { adminSLogin, adminSignUp } from 'src/app/shared/adminDataType';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-auth.component.css']
 })
 export class AdminAuthComponent implements OnInit {
+
+  showLogin= false;
+  loginError = '';
 
   constructor(private authservice:AuthserviceService, private router:Router){}
 
@@ -25,5 +28,20 @@ export class AdminAuthComponent implements OnInit {
     //     }
     // });
 
+  }
+
+  login(data:adminSLogin){
+    // console.log(data);
+    this.authservice.adminLogin(data);
+    this.authservice.isLoginError.subscribe((isError)=>console.log(isError));
+    this.loginError="Email or password is incorrect"
+  }
+
+  openLogin(){
+    this.showLogin = true;
+  }
+
+  openSignUp(){
+    this.showLogin = false;
   }
 }
