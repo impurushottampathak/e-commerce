@@ -1,11 +1,11 @@
 <nav class="nav">
   <h1><a href="">E-commerce</a></h1>
-  <div *ngIf="menuType == 'default'" class="nav-search">
+  <div *ngIf="menuType === 'default'" class="nav-search">
     <input type="text" placeholder="Search Products" />
     <button>Search</button>
   </div>
   <div [ngSwitch]="menuType">
-    <ul *ngSwitchCase="'defalut'">
+    <ul *ngSwitchCase="'default'">
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="admin-auth">Admin</a></li>
       <li><a href="">User</a></li>
@@ -13,10 +13,10 @@
     </ul>
     <ul *ngSwitchCase="'admin'">
         <li><a routerLink="">Home</a></li>
-        <li><a routerLink="admin-auth">Add Product</a></li>
-        <li><a href="">List</a></li>
-        <li><a href="">Logout</a></li>
-        <li><a href="">Admin Name</a></li>
+        <li><a routerLink="admin-add-product">Add Product</a></li>
+        <li><a routerLink="admin-home">List</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+        <li><a href="">{{adminName | titlecase}}</a></li>
       </ul>
   </div>
 </nav>

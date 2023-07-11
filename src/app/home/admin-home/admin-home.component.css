@@ -1,0 +1,39 @@
+table,td,th{
+    color: blueviolet;
+    border: 1px solid black;
+    text-align: left;
+}
+
+.product-list h1{
+    /* text-align: center; */
+    color: blueviolet;
+}
+
+table{
+    /* margin-left: 350px; */
+    border-collapse: collapse;
+}
+
+table img{
+    width: 150px;
+    height: 150px;
+}
+
+.productMessage{
+    color: red;
+    text-align: center;
+}
+
+.actionButtons{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-button{
+    margin-right: 15px;
+}
+
+.form-button a{
+    text-decoration: none;
+    color: #000;
+}

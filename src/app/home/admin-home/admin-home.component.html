@@ -1,1 +1,37 @@
-<p>admin-home works!</p>
+<div class="product-list">
+  <h1>Product List</h1>
+  <p class="productMessage">{{ productMessage }}</p>
+  <table [cellPadding]="15">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name Of Product</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td><img src="{{ item.image }}" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.color }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+          <div class="actionButtons">
+            <button class="form-button" (click)="deleteProduct(item.id)">
+              Delete
+            </button>
+            <button class="form-button">
+              <a href="/admin-update-product/{{item.id}}">Update</a>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

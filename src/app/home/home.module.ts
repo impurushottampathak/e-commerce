@@ -5,13 +5,14 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
     AdminHomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     HomeComponent

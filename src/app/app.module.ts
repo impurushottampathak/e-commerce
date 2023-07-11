@@ -7,6 +7,7 @@ import { HeaderModule } from './header/header.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminAddProductModule } from './admin-add-product/admin-add-product.module';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     HeaderModule,
     HomeModule,
     AuthModule,
-    HttpClientModule
+    AdminAddProductModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

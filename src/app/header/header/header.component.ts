@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   menuType:string='default';
+  adminName:string=''
 
   constructor(private route:Router) { }
 
@@ -17,7 +18,9 @@ export class HeaderComponent implements OnInit {
       if(val.url){
         // console.log(val.url);
         if(localStorage.getItem('admin') && val.url.includes('admin')){
-            console.log('This is admin space');
+            let adminStore:any = localStorage.getItem('admin');
+            let adminStoreData:any = JSON.parse(adminStore)
+            this.adminName = adminStoreData[0].name
             this.menuType = 'admin'
         }else{
           console.log('Outside admin space');
@@ -25,6 +28,11 @@ export class HeaderComponent implements OnInit {
         }
       }
     })
+  }
+
+  logout(){
+    localStorage.removeItem('admin');
+    this.route.navigate(['/']);
   }
 
 }
