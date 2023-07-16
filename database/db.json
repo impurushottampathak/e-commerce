@@ -58,12 +58,21 @@
     },
     {
       "name": "Iphone 14",
-      "price": "100000",
+      "price": "100",
       "category": "Mobiles",
-      "color": "Black",
-      "description": "An Apple's Product",
+      "color": "Petal Pink",
+      "description": "2000MP",
       "image": "https://www.dealntech.com/wp-content/uploads/2023/03/Samsung-Galaxy-F14.jpg",
       "id": 4
+    },
+    {
+      "name": "Samsung S23 Ultra",
+      "price": "100",
+      "category": "Mobiles",
+      "color": "White",
+      "description": "5GB RAM, 120MP-64MP front camera",
+      "image": "https://images.samsung.com/levant/smartphones/galaxy-s23/buy/kv_group_MO_v2.jpg",
+      "id": 5
     }
   ]
 }

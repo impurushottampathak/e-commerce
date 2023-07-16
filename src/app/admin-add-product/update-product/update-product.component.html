@@ -1,6 +1,6 @@
 <div class="update-product">
     <h1>Update Product</h1>
-    
+    <p class="updateProductMessage">{{productUpdateMessage}}</p>
     <form class="common-form" #updateProduct="ngForm" (ngSubmit)="update(updateProduct.value)">
       <label for="product-name" class="form-lable">Product Name</label>
       <input

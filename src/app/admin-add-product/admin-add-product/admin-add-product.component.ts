@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { product } from 'src/app/shared/addProductDataType';
-import { AddProductService } from '../add-product.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-admin-add-product',
@@ -11,7 +11,7 @@ export class AdminAddProductComponent implements OnInit {
 
   addProductMsg:string|undefined;
 
-  constructor(private ProductService:AddProductService){}
+  constructor(private ProductService:ProductService){}
 
   ngOnInit(): void {
     

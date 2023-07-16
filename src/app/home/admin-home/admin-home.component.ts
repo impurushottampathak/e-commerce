@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AddProductService } from 'src/app/admin-add-product/add-product.service';
+import { ProductService } from 'src/app/service/product.service';
 import { product } from 'src/app/shared/addProductDataType';
 
 @Component({
@@ -11,7 +11,7 @@ export class AdminHomeComponent implements OnInit {
   productList: undefined | product[];
   productMessage: undefined | string;
 
-  constructor(private productService: AddProductService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.displayProductList();

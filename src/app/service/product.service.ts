@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { product } from '../shared/addProductDataType';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class AddProductService {
+export class ProductService {
 
   constructor(private http:HttpClient) { }
 
@@ -27,5 +28,9 @@ export class AddProductService {
 
   getProduct(id:string){
     return this.http.get<product>(`http://localhost:3000/products/${id}`)
+  }
+
+  updateProduct(data:product){
+    return this.http.put<product>(`http://localhost:3000/products/${data.id}`,data)
   }
 }
