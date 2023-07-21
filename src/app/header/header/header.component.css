@@ -53,3 +53,23 @@
     color: blueviolet;
     cursor: pointer;
 }
+
+.searchProductList{
+  position:absolute;
+  top:40px;
+  z-index: 10;;
+  display:list-item !important;
+  border: 1px solid #ddd;
+  background:#fff;
+  width:300px
+}
+
+.searchProductList li{
+  padding: 5px;  
+  border: 1px solid #ddd;
+}
+
+.searchProductList li a{
+  cursor: pointer;
+  color: blueviolet;
+}

@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" *ngFor="let item of popularProducts">
+        <img src="{{item.image}}" class="w-90" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>{{item.name}}</h5>
+            <p>{{item.color}}</p>
+            <p>{{item.price}}</p>
+            <p>{{item.description}}</p>
+          </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="product-wrapper">
+    <h2>Trendy Products</h2>
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of trendyProducts">
+        <div class="product-item">
+            <img src="{{item.image}}">
+          <div class="product-content">
+            <div class="product-name">
+              <h6>{{item.name}}</h6>
+            </div>
+            <h6>Price :{{item.price}}</h6>
+            <h6>Color : {{item.color}}</h6>
+          </div>
+          <div class="product-footer">
+            <a href="">Get Details</a>
+            <a href="">Add to cart</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+      

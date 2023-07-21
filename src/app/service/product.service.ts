@@ -33,4 +33,16 @@ export class ProductService {
   updateProduct(data:product){
     return this.http.put<product>(`http://localhost:3000/products/${data.id}`,data)
   }
+
+  popularProducts(){
+    return this.http.get<product[]>(`http://localhost:3000/products?_limit=3`) //this will limit product data upto 3 entires
+  }
+
+  trendyProducts(){
+    return this.http.get<product[]>(`http://localhost:3000/products?_limit=10`) //this will limit product data upto 10 entires
+  }
+
+  searchProducts(query:string){
+    return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`)
+  }
 }
