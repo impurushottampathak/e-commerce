@@ -6,6 +6,8 @@ import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AdminAddProductComponent } from './admin-add-product/admin-add-product/admin-add-product.component';
 import { UpdateProductComponent } from './admin-add-product/update-product/update-product.component';
+import { SearchpageComponent } from './header/searchpage/searchpage.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,15 @@ const routes: Routes = [
     path: 'admin-update-product/:id', // This /:id is used to determine dynamic routing of the product
     component:UpdateProductComponent,
     canActivate: [AuthGuard]
+  },  
+  {
+    path: 'search/:query',
+    component:SearchpageComponent,
+  }
+  ,  
+  {
+    path: 'details/:productid',
+    component:ProductDetailsComponent,
   }
 ];
 

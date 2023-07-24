@@ -11,7 +11,7 @@ import { AdminAddProductModule } from './admin-add-product/admin-add-product.mod
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

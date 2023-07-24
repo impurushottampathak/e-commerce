@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
+import { SearchpageComponent } from './searchpage/searchpage.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    SearchpageComponent
   ],
   imports: [
     CommonModule,

@@ -1,8 +1,8 @@
 <nav class="nav">
   <h1><a href="">E-commerce</a></h1>
   <div *ngIf="menuType === 'default'" class="nav-search">
-    <input type="text" (keyup)="searchProduct($event)" id="search" (blur)="hideSearchResult()" placeholder="Search Products" />
-    <button>Search</button>
+    <input type="text" (keyup)="searchProduct($event)" #searchInput (blur)="hideSearchResult()" placeholder="Search Products" />
+    <button (click)="searchSubmit(searchInput.value)">Search</button>
     <ul class="searchProductList" *ngIf="searchProductList">      
         <li *ngFor="let item of searchProductList">
           <a>{{item.name}}</a>
