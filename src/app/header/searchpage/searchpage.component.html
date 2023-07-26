@@ -3,7 +3,7 @@
         <a routerLink="/details/{{item.id}}"><img src="{{item.image}}" alt=""></a>
     </div>
     <div class="col-sm-8 details">
-        <h5 routerLink="/details/{{item.id}}">{{item.name}}</h5>
+        <a routerLink="/details/{{item.id}}" class="search-name"><h5>{{item.name}}</h5></a>
         <p>Price: {{item.price}}</p>
         <p><span>Color: {{item.color}}</span><span>Category : {{item.category}}</span></p>
         <p>{{item.description}}</p>

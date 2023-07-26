@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { adminSLogin, adminSignUp } from '../shared/adminDataType';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { userLogin, userSignUp } from '../shared/userDataTypes';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class AuthserviceService {
 
   isAdminLoggedIn = new BehaviorSubject<boolean>(false);
-
+  isUserLoggedIn = new BehaviorSubject<boolean>(false);
   isLoginError = new EventEmitter<boolean>(false);
 
   constructor(private http:HttpClient, private router:Router) { }
@@ -45,5 +46,35 @@ export class AuthserviceService {
           this.isLoginError.emit(true);
         }
     })
+  }
+
+  userSignUp(data:userSignUp){
+    return this.http.post("http://localhost:3000/users",data,{observe:'response'}).subscribe((result)=>{
+      console.log(result)
+      if(result){
+        this.isUserLoggedIn.next(true);
+        localStorage.setItem('user',JSON.stringify(result.body))
+        this.router.navigate(['/']);
+      }
+    })
+  }
+
+  userLogin(data:userLogin){
+    this.http.get(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,{observe:'response'}).subscribe((result:any)=>{
+        if(result && result.body && result.body.length===1){
+          localStorage.setItem('user',JSON.stringify(result.body))
+          this.router.navigate(['/'])
+        }else{
+          console.warn('Username or password is not correct');
+          this.isLoginError.emit(true);
+        }
+    })
+  }
+
+  reloadUser(){
+    if(localStorage.getItem('user')){
+      this.isUserLoggedIn.next(true);
+      this.router.navigate(['/'])
+    }
   }
 }

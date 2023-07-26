@@ -8,13 +8,17 @@
     <h4>Color : {{ productData?.color }} <span><p [style.backgroundColor]="productData?.color" class="product-color"></p></span></h4>
     <h4>Description: {{ productData?.description }}</h4>
     <div class="quantity">
-        <button>-</button>
-        <input type="text" value="1">
-        <button>+</button>
+        <button (click)="manageQuantity('min')">-</button>
+        <input type="text" value="{{ productQuantity }}">
+        <button (click)="manageQuantity('max')">+</button>
       </div>
     <div class="product-buttons">
       <button class="form-button">Buy Now</button>
-      <button class="form-button">Add to Cart</button>
+      <button class="form-button" (click)="addToCart()">Add to Cart</button>
+    </div>
+    <div class="quantity">
+      <h5>Selected Quantity:<input type="text" value="{{ productQuantity }}"></h5>
+      <h5>Total Amount for Selected Quantity : {{totalAmount}}</h5>
     </div>
   </div>
 </div>

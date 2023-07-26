@@ -22,12 +22,6 @@ export class AdminAuthComponent implements OnInit {
   signUp(data:adminSignUp){
     console.log(data);
     this.authservice.adminSignUp(data)
-    // this.authservice.adminSignUp(data).subscribe((res)=>{
-    //     if(res){
-    //       this.router.navigate(['admin-home'])
-    //     }
-    // });
-
   }
 
   login(data:adminSLogin){

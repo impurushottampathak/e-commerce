@@ -23,3 +23,7 @@
 .search-item span{
     margin-right: 10px;
 }
+
+.search-name{
+    text-decoration: none;
+}

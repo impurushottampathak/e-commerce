@@ -74,5 +74,37 @@
       "image": "https://images.samsung.com/levant/smartphones/galaxy-s23/buy/kv_group_MO_v2.jpg",
       "id": 5
     }
+  ],
+  "users": [
+    {
+      "name": "sachin",
+      "email": "sachin@user.com",
+      "password": "sachin@123",
+      "id": 1
+    },
+    {
+      "name": "shubham",
+      "email": "shubham@user.com",
+      "password": "user@123",
+      "id": 2
+    },
+    {
+      "name": "Palash",
+      "email": "palash@user.com",
+      "password": "user@123",
+      "id": 3
+    },
+    {
+      "name": "sandy",
+      "email": "sandy@user.com",
+      "password": "user@123",
+      "id": 4
+    },
+    {
+      "name": "Sandeep",
+      "email": "sandeep@user.com",
+      "password": "user@123",
+      "id": 5
+    }
   ]
 }

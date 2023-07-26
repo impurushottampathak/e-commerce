@@ -1,0 +1,60 @@
+<div class="user-auth">
+    <div *ngIf="!showLogin" class="signup">
+        <h1>User SignUp</h1>
+        <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp.value)">
+            <label for="name" class="form-label">Name</label>
+            <input 
+            type="text" 
+            class="form-input" 
+            placeholder="Enter Your Name" 
+            name="name" 
+            ngModel 
+            />
+            <label for="email" class="form-label">Email</label>
+            <input 
+            type="email" 
+            class="form-input" 
+            placeholder="Enter Your Email" 
+            name="email" 
+            ngModel 
+            />
+            <label for="password" class="form-label">Password</label>
+            <input 
+            type="password" 
+            class="form-input" 
+            placeholder="Enter Password" 
+            name="password" 
+            ngModel 
+            />
+            <button class="form-button">Sign Up</button>
+            <a class="authToggle" (click)="openLogin()">Already have an account? Click here for Login <span><i
+                        class="fa-solid fa-toggle-on"></i></span></a>
+        </form>
+    </div>
+
+    <div *ngIf="showLogin" class="login">
+        <h1>User Login</h1>
+        <p class="errorMsg">{{loginError}}</p>
+        <form class="common-form" #userLogin="ngForm" (ngSubmit)="login(userLogin.value)">
+            <label for="email" class="form-label">Email</label>
+            <input 
+            type="email" 
+            class="form-input" 
+            placeholder="Enter Your Email" 
+            name="email"             
+            ngModel 
+            />
+            <label for="password" class="form-label">Password</label>
+            <input 
+            type="password" 
+            class="form-input" 
+            placeholder="Enter Password" 
+            name="password" 
+            ngModel 
+            />
+            <button class="form-button">Login</button>
+            <a class="authToggle" (click)="openSignUp()">Do not have account? Click here for SignUp <span><i
+                        class="fa-solid fa-toggle-on"></i></span></a>
+        </form>
+    </div>
+</div>

@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active" *ngFor="let item of popularProducts">
-        <img src="{{item.image}}" class="w-90" alt="...">
+        <a routerLink="/details/{{item.id}}"><img src="{{item.image}}" class="w-90" alt="..."></a> 
         <div class="carousel-caption d-none d-md-block">
             <h5>{{item.name}}</h5>
             <p>{{item.color}}</p>
@@ -38,7 +38,7 @@
             <h6>Color : {{item.color}}</h6>
           </div>
           <div class="product-footer">
-            <a href=""><button class="form-button">Get Details</button></a>
+            <a routerLink="/details/{{item.id}}"><button class="form-button">Get Details</button></a>
             <a href=""><button class="form-button">Add to cart</button></a>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { AdminAddProductComponent } from './admin-add-product/admin-add-product/
 import { UpdateProductComponent } from './admin-add-product/update-product/update-product.component';
 import { SearchpageComponent } from './header/searchpage/searchpage.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { UserAuthComponent } from './auth/user-auth/user-auth.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'admin-auth',
     component: AdminAuthComponent
+  },
+  {
+    path: 'user-auth',
+    component: UserAuthComponent
   },
   {
     path: 'admin-home',

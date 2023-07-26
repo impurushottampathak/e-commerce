@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { product } from 'src/app/shared/addProductDataType';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   popularProducts: undefined | product[];
   trendyProducts: undefined | product[];
 
-  constructor(private productService : ProductService) { }
+  constructor(private productService : ProductService, private route:Router) { }
 
   ngOnInit(): void {
     this.productService.popularProducts().subscribe((result)=>{
@@ -24,4 +25,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  redirectingToDetails(id:number){
+    setTimeout(()=>{
+      this.route.navigate([`/details/`+id]);
+      window.location.reload();
+    },2000)
+  }
 }
