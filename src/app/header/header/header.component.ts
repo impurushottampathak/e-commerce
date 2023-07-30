@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   adminName: string = '';
   userName: string = '';
   searchProductList: undefined | product[];
+  cartItem:number =0;
 
   constructor(private route: Router, private productService: ProductService) { }
 
@@ -23,19 +24,27 @@ export class HeaderComponent implements OnInit {
         // console.log(val.url);
         if (localStorage.getItem('admin') && val.url.includes('admin')) {
           let adminStore: any = localStorage.getItem('admin');
-          let adminStoreData: any = JSON.parse(adminStore)
-          this.adminName = adminStoreData[0].name
-          this.menuType = 'admin'
+          let adminStoreData: any = JSON.parse(adminStore);
+          this.adminName = adminStoreData[0].name;
+          this.menuType = 'admin';
         } else if (localStorage.getItem('user')) {
           let userStore: any = localStorage.getItem('user');
-          let userStoreData: any = userStore && JSON.parse(userStore)
-          this.userName = userStoreData[0].name
-          this.menuType = 'user'
+          let userStoreData: any = userStore && JSON.parse(userStore);
+          this.userName = userStoreData.name;
+          this.menuType = 'user';
+          this.productService.getCartList(userStoreData.id);
         } else {
           console.log('Outside admin space');
           this.menuType = 'default';
         }
       }
+    });
+    let cartData = localStorage.getItem('localCart');
+    if(cartData){
+      this.cartItem = JSON.parse(cartData).length;
+    }
+    this.productService.cartData.subscribe((items)=>{
+      this.cartItem = items.length;
     })
   }
 
@@ -47,6 +56,7 @@ export class HeaderComponent implements OnInit {
   userLogout(){
     localStorage.removeItem('user');
     this.route.navigate(['user-auth']);
+    this.productService.cartData.emit([])
   }
 
   searchProduct(query: KeyboardEvent) {

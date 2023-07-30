@@ -58,16 +58,16 @@
     },
     {
       "name": "Iphone 14",
-      "price": "100",
+      "price": "95000",
       "category": "Mobiles",
-      "color": "Petal Pink",
+      "color": "Pink",
       "description": "2000MP",
       "image": "https://www.dealntech.com/wp-content/uploads/2023/03/Samsung-Galaxy-F14.jpg",
       "id": 4
     },
     {
-      "name": "Samsung S23 Ultra",
-      "price": "100",
+      "name": "Edge 30 fusion",
+      "price": "35000",
       "category": "Mobiles",
       "color": "White",
       "description": "5GB RAM, 120MP-64MP front camera",
@@ -105,6 +105,56 @@
       "email": "sandeep@user.com",
       "password": "user@123",
       "id": 5
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    }
+  ],
+  "cart": [
+    {
+      "name": "Samsung F14",
+      "price": "14500",
+      "category": "Mobiles",
+      "color": "Black",
+      "description": "6GB RAM, 128GB ROM",
+      "image": "https://www.dealntech.com/wp-content/uploads/2023/03/Samsung-Galaxy-F14.jpg",
+      "quantity": 1,
+      "productId": 2,
+      "userId": 5,
+      "id": 1
+    },
+    {
+      "name": "Samsung S23 Ultra",
+      "price": "120000",
+      "category": "Mobiles",
+      "color": "Black",
+      "description": "12GB RAM, 256GB ",
+      "image": "https://images.samsung.com/levant/smartphones/galaxy-s23/buy/kv_group_MO_v2.jpg",
+      "quantity": 1,
+      "productId": 3,
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "name": "Iphone 14",
+      "price": "95000",
+      "category": "Mobiles",
+      "color": "Pink",
+      "description": "2000MP",
+      "image": "https://www.dealntech.com/wp-content/uploads/2023/03/Samsung-Galaxy-F14.jpg",
+      "quantity": 1,
+      "productId": 4,
+      "userId": 5,
+      "id": 3
     }
   ]
 }

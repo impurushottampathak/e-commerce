@@ -19,3 +19,15 @@
 .errorMsg{
     color: red;
 }
+
+.invalid-input{
+    color: red;
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+button:disabled{
+    cursor: not-allowed;
+}

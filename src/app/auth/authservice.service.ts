@@ -62,8 +62,9 @@ export class AuthserviceService {
   userLogin(data:userLogin){
     this.http.get(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,{observe:'response'}).subscribe((result:any)=>{
         if(result && result.body && result.body.length===1){
-          localStorage.setItem('user',JSON.stringify(result.body))
-          this.router.navigate(['/'])
+          localStorage.setItem('user',JSON.stringify(result.body[0]));
+          this.isLoginError.emit(false);
+          this.router.navigate(['/']);
         }else{
           console.warn('Username or password is not correct');
           this.isLoginError.emit(true);

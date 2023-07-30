@@ -41,9 +41,13 @@
             type="email" 
             class="form-input" 
             placeholder="Enter Your Email" 
-            name="email"             
+            name="email"
+            email             
             ngModel 
+            #email="ngModel"
+            required
             />
+            <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please enter valid email id</span></p>
             <label for="password" class="form-label">Password</label>
             <input 
             type="password" 
@@ -51,8 +55,13 @@
             placeholder="Enter Password" 
             name="password" 
             ngModel 
+            minlength="2"
+            maxlength="20"
+            #password="ngModel"
+            required
             />
-            <button class="form-button">Login</button>
+            <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please enter correct password</span></p>
+            <button [disabled]="userLogin.invalid" class="form-button">Login</button>
             <a class="authToggle" (click)="openSignUp()">Do not have account? Click here for SignUp <span><i
                         class="fa-solid fa-toggle-on"></i></span></a>
         </form>
